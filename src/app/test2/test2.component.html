@@ -1,7 +1,7 @@
 <app-test3 text="elo"></app-test3>
 <p>{{ele | json}}</p>
 <p>{{test()?.name}}</p>
-
+<p>HALO</p>
 <form [formGroup]="issueForm"  (ngSubmit)="submitForm()" >
     <label for="name">Imię:</label>
     <input type="text" id="name" formControlName="name"/>
@@ -12,6 +12,7 @@
     <label for="email" [style]="expr">Adres e-mail:</label>
     <input type="email" id="email" formControlName="email"/>
 
+    
     <label for="age">Wiek:</label>
     <input type="text" id="age" formControlName="age"/>
 
