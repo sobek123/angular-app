@@ -1,0 +1,12 @@
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
+<h4>{{custom | append}}</h4>
+<h4>{{val | currency: "EUR"}}</h4>
+<a [routerLink]="['strona1']" [routerLinkActive]="['active']">Strona 1</a>
+<a [routerLink]="['strona2']" [routerLinkActive]="['active']">Strona 2</a>
+<!-- <a routerLink="/strona2" >Strona 4</a> -->
+<a [routerLink]="['/strona', 22]" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Strona 3</a>
+<img [src]="url" [alt]="url">
+<router-outlet></router-outlet>
+<!-- <app-car text="WITAM" ></app-car> -->

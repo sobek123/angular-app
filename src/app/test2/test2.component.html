@@ -1,0 +1,164 @@
+<app-test3 text="elo"></app-test3>
+<p>{{ele | json}}</p>
+<p>{{test()?.name}}</p>
+
+<form [formGroup]="issueForm"  (ngSubmit)="submitForm()" >
+    <label for="name">Imię:</label>
+    <input type="text" id="name" formControlName="name"/>
+
+    <label for="surname">Nazwisko:</label>
+    <input type="text" id="surname" formControlName="surname"/>
+
+    <label for="email" [style]="expr">Adres e-mail:</label>
+    <input type="email" id="email" formControlName="email"/>
+
+    <label for="age">Wiek:</label>
+    <input type="text" id="age" formControlName="age"/>
+
+    <div formGroupName="address">
+        <p>Adres</p>
+        <label for="country" [style.backgroundColor]="'red'">Państwo:</label>
+        <input type="text" id="country" formControlName="country"/>
+
+        <label for="street" [class]="one">Miasto:</label>
+        <input type="text" id="street" formControlName="street"/>
+
+        <label for="postCode" [class.main1]="isActive">Kod pocztowy:</label>
+        <input type="text" id="postCode" formControlName="postCode"/>
+
+    </div>
+    <input type="color" id="color" name="color" formControlName="color">
+    <input type="date" id="date" name="date" formControlName="date">
+    <input type="datetime" id="datetime" name="datetime" formControlName="datetime">
+    <input type="datetime-local" id="datetimelocal" name="datetimelocal" formControlName="datetimelocal">
+    <input type="checkbox" id="checkbox" name="checkbox" formControlName="checkbox">
+    <input type="number" id="number" name="number" formControlName="number">
+    <input type="month" id="month" name="month" formControlName="month">
+    <input type="week" id="week" name="week" formControlName="week">
+    <input type="radio" id="radio" name="radio" formControlName="radio">
+    <input type="range" id="range" name="range" formControlName="range">
+    <input type="file" id="file" name="file" formControlName="file">
+    <input type="search" id="search" name="search" formControlName="search">
+    <input type="tel" id="tel" name="tel" formControlName="tel">
+    <input type="time" id="time" name="time" formControlName="time">
+    <input type="url" id="url" name="url" formControlName="url">
+    <input type="image" id="image" name="image" formControlName="image">
+    <input type="password" id="password" name="password" formControlName="password" data-elo-melo="4" data-nieelo="siemanko">
+    <label for="info">Info</label>
+    <textarea id="info" name="info" formControlName="info"></textarea>
+    <input type="date" id="dat" name="dat" formControlName="dat">
+    <mat-form-field >
+        <mat-label>Favorite food</mat-label>
+        <input matInput placeholder="Ex. Pizza" value="Sushi" formControlName="mat">
+        <mat-error *ngIf="myError('mat', 'required')">Name is required</mat-error>
+      </mat-form-field>
+    <mat-form-field >
+    <mat-label>Favorite food2</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="Sushi" formControlName="mat2">
+    <mat-error *ngIf="myError('mat2', 'required')">Name2 is required</mat-error>
+    </mat-form-field>
+    <select formControlName= "inputname"  >
+        <!-- <option selected value="option1">Option 1</option> -->
+        <option *ngFor="let x of selects" [ngValue]="x" >{{x}}</option>
+        <!-- <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+        <option value="option5">Option 5</option> -->
+    
+    </select>
+    
+    <!-- <div >
+        <label for="skill">Umiejetności</label>
+        <input #skill type="text" (keyup.enter)="addSkill(skill)" id="skill" name="skill" formControlName="skills">
+    </div> -->
+    <button type="submit" class="btn btn-primary">Wyślij</button>
+    <button type="reset" class="btn btn-info">Wyczyść</button>
+    <button type="button" (click)="update()" class="btn btn-success">Uzupełnij</button>
+    <button type="button" (click)="updateF()" class="btn btn-success">Uzupełnij2</button>
+
+    <!-- <h1 [ngStyle]="{
+        color: isActive ? 'red' : 'blue',
+        textTransform: isActive ? 'uppercase' : 'lowercase'
+    }">Kolor</h1>
+
+    <h2 [ngClass]="{
+        textClass: isActive,
+        nieTexrtClass: isActive
+    }">
+      Klasa  
+    </h2> -->
+
+</form>
+
+<!-- <form (ngSubmit)="submitForm()">
+    <label for="name">Imię:</label>
+    <input type="text" id="name" [(ngModel)] = "test2.name" name="name"/>
+
+    <label for="surname">Nazwisko:</label>
+    <input type="text" id="surname" [(ngModel)] = "test2.surname" name="surname"/>
+
+    <label for="email">Adres e-mail:</label>
+    <input type="email" id="email" [(ngModel)] = "test2.email" name="email"/>
+
+    <label for="age">Wiek:</label>
+    <input type="text" id="age" [(ngModel)] = "test2.age" name="age"/>
+
+    <div >
+        <p>Adres</p>
+        <label for="country">Państwo:</label>
+        <input type="text" id="country" [(ngModel)] = "test2.country" name="country"/>
+
+        <label for="street">Miasto:</label>
+        <input type="text" id="street" [(ngModel)] = "test2.street" name="street"/>
+
+        <label for="postCode">Kod pocztowy:</label>
+        <input type="text" id="postCode" [(ngModel)] = "test2.postCode" name="postCode"/>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Wyślij</button>
+    <button type="reset" class="btn btn-info">Wyczyść</button>
+    <button type="reset" class="btn btn-info" (click)="updateF()">Patch</button>
+
+    <button type="button" (click)="update()" class="btn btn-success">Uzupełnij</button>
+
+
+</form> -->
+<div *ngIf="inputs.length > 0 && isActive then isData else noData"></div>
+<ng-template #noData>
+    <p>Nie ma nic</p>
+</ng-template>
+<ng-template #isData>
+    <ul >
+        <li *ngFor="let item of inputs; index as i">{{i+1}} {{item}}</li>
+    </ul>
+</ng-template>
+
+
+<input (keyup.enter)="addInput(in.value)" #in name="in" id="in" (blur)="addInput(in.value)" [value]="textValue" [(ngModel)] = "inputname">
+<button id="but" (click)="addInput(in.value)">Dodaj</button>
+<p>{{inputname}}</p>
+
+<div [ngSwitch]="step">
+    <p *ngSwitchCase="1">Step 1</p>
+    <p *ngSwitchCase="2">Step 2</p>
+    <p *ngSwitchCase="3">Step 3</p>
+    <p *ngSwitchCase="4">Step 4</p>
+    <p *ngSwitchDefaultCase>Step Default</p>
+</div>
+
+
+<select [(ngModel)] = "inputname" multiple (change)="show()">
+    <!-- <option selected value="option1">Option 1</option> -->
+    <option *ngFor="let x of selects" [ngValue]="x" >{{x}}</option>
+    <!-- <option value="option3">Option 3</option>
+    <option value="option4">Option 4</option>
+    <option value="option5">Option 5</option> -->
+
+</select>
+
+<mat-slide-toggle>EEE</mat-slide-toggle>
+<p >{{inputname}}</p>
+<p id="witam">{{inputname2}}</p>
+<input [value]="va" name="va" id="va" type="text" (change)="show()"/>
+
+
+

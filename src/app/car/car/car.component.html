@@ -1,0 +1,33 @@
+<p>{{text}}</p>
+<li *ngFor="let item of items">{{item}}</li>
+<span *ngIf="condition" >elo</span>
+<button (click)="onClick()">WWWW</button>
+<p title="elo">Wiam</p>
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+<!-- <p>COunter: {{counter}}</p> -->
+<p>Value: {{ name.value }}</p>
+<button type="submit" (click)="updateName()">Update name</button>
+<p *ngIf="condition2">JESLI</p>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <h2>Personal</h2>
+    <label for="firstName">First name:</label>
+    <input type="text" formControlName="firstName" id="firstName"/>
+    <label for="lastName">Last name:</label>
+    <input type="text" id="lastName" formControlName="lastName">
+
+    <div formGroupName="address">
+        <h2>Adress</h2>
+        <label for="city">City:</label>
+        <input type="text" id="city" formControlName="city">
+        <label for="street">Street:</label>
+        <input type="text" id="street" formControlName="street">
+        <label for="state">State:</label>
+        <input type="text" id="state" formControlName="state">
+        <label for="zip">Zip:</label>
+        <input type="text" id="zip" formControlName="zip">
+    </div>
+    <button type="submit">Submit</button>
+    <button type="submit" (click)="updateProfile()">Update profile</button>
+
+</form>
