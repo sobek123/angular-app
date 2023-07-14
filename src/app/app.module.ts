@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
+import { TestgitComponent } from './testgit/testgit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
     TestComponent,
     Test2Component,
     AppendPipe,
-    Test3Component
+    Test3Component,
+    TestgitComponent
   ],
   imports: [
     BrowserModule,
